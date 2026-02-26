@@ -1,0 +1,8 @@
+components:
+- event_bindings: {}
+  layout_properties: {column: CVPVAK}
+  name: button_Verein_Auswaehlen
+  properties: {text: Management}
+  type: Button
+container: {type: DataRowPanel}
+is_package: true
