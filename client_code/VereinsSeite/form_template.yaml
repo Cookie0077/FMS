@@ -5,7 +5,7 @@ components:
   type: Label
 - layout_properties: {grid_position: 'VCXLID,HOQXUL'}
   name: image_Vereinslogo
-  properties: {height: 64.28570556640625}
+  properties: {height: 71.85711669921875}
   type: Image
 - event_bindings: {}
   layout_properties: {grid_position: 'VCXLID,YYIBNO'}

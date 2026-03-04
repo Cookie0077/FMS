@@ -44,10 +44,10 @@ def query_database_getSpieler(Verein_id: str):
     result = cur.execute(sql).fetchall()
   return [dict(row) for row in result]
 
-  @anvil.server.callable
-  def query_database_getMatch(Verein_id: str):
+@anvil.server.callable
+def query_database_getMatch(Verein_id: str):
     sql = f""" SELECT Match.Datum AS datum, Match.Heimmannschaft as heim, Match.Auswärtsmannschaft
-    AS auswaerts, (Match.Tore_Heim || '-' || Match.Tore_Gast) AS Ergebnis,Verein.Verein_id FROM Match
+    AS auswaerts, (Match.Tore_Heim || '-' || Match.Tore_Gast) AS ergebnis,Verein.Verein_id FROM Match
     JOIN Spieler_Statistik 
     ON Spieler_Statistik.Match_id = Match.Match_id
     JOIN Spieler
@@ -57,9 +57,8 @@ def query_database_getSpieler(Verein_id: str):
     JOIN Verein 
     ON Verein.Verein_id = Verein_Spieler.Verein_id
     WHERE Verein.Verein_id = '{Verein_id}';"""
-
-  with sqlite3.connect(data_files["fussball_manager.db"]) as conn:
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
-    result = cur.execute(sql).fetchall()
-  return [dict(row) for row in result]
+    with sqlite3.connect(data_files["fussball_manager.db"]) as conn:
+      conn.row_factory = sqlite3.Row
+      cur = conn.cursor()
+      result = cur.execute(sql).fetchall()
+    return [dict(row) for row in result]

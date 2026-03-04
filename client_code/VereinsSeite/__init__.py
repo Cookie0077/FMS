@@ -13,8 +13,8 @@ class VereinsSeite(VereinsSeiteTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     Verein_dict.update(Vereins_dict)
-    self.label_VereinsName.text = Verein_dict["Vereinsname"]
-    self.image_Vereinslogo.source = Verein_dict["Logo"]
+    self.label_VereinsName.text = Vereins_dict["Vereinsname"]
+    self.image_Vereinslogo.source = Vereins_dict["Logo"]
     self.tabs_Vereine_tab_click(0,"Spiele")
   
 
