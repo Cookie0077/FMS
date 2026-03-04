@@ -11,6 +11,7 @@ class VereinsSeite(VereinsSeiteTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.label_VereinsName.text = Vereins_dict["Vereinsname"]
+    self.image_Vereinslogo.source = Vereins_dict["Logo"]
 
   @handle("button_Back", "click")
   def button_Back_click(self, **event_args):
