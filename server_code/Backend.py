@@ -16,7 +16,7 @@ def query_database_getLiga():
 @anvil.server.callable
 def query_database_getVereine(liga: str):
 
-  sql = f"""SELECT Verein.Name AS Vereinsname, Verein.Gründungsjahr AS GruendungsJahr, 
+  sql = f"""SELECT Verein.Verein_id , Verein.Name AS Vereinsname, Verein.Gründungsjahr AS GruendungsJahr, 
         Verein.Stadion_Kapazität AS Kapazitaet, Verein.Logo AS Logo FROM Verein
         JOIN Liga
         ON Verein.Liga_id = Liga.Liga_id
@@ -30,6 +30,36 @@ def query_database_getVereine(liga: str):
 
 
 @anvil.server.callable
-def query_database_getVereine(Verein: str):
+def query_database_getSpieler(Verein_id: str):
+  sql = f""" SELECT Spieler.Spieler_Nummer AS nummer, Spieler.Vorname || " " ||
+    Spieler.Nachname AS name, Spieler.Marktwert AS marktwert, Spieler.Position 
+    AS position FROM Spieler
+    JOIN Verein_Spieler
+    ON Verein_Spieler.Spieler_Nummer = Spieler.Spieler_Nummer
+    WHERE Verein_Spieler.Verein_id ='{Verein_id}'; """
 
-  
+  with sqlite3.connect(data_files["fussball_manager.db"]) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    result = cur.execute(sql).fetchall()
+  return [dict(row) for row in result]
+
+  @anvil.server.callable
+  def query_database_getMatch(Verein_id: str):
+    sql = f""" SELECT Match.Datum AS datum, Match.Heimmannschaft as heim, Match.Auswärtsmannschaft
+    AS auswaerts, (Match.Tore_Heim || '-' || Match.Tore_Gast) AS Ergebnis,Verein.Verein_id FROM Match
+    JOIN Spieler_Statistik 
+    ON Spieler_Statistik.Match_id = Match.Match_id
+    JOIN Spieler
+    ON Spieler.Spieler_Nummer  = Spieler_Statistik.Spieler_Nummer
+    JOIN Verein_Spieler
+    On Verein_Spieler.Spieler_Nummer = Spieler.Spieler_Nummer
+    JOIN Verein 
+    ON Verein.Verein_id = Verein_Spieler.Verein_id
+    WHERE Verein.Verein_id = '{Verein_id}';"""
+
+  with sqlite3.connect(data_files["fussball_manager.db"]) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    result = cur.execute(sql).fetchall()
+  return [dict(row) for row in result]

@@ -6,7 +6,10 @@ unique_ids:
     Startseite: JOOTW7ZJV66TFSNPTP4Y2U2QFN3MBEVR
     Startseite.RowTemplate1: '1772104318951662507696377.6416'
     VereinsSeite: '1772104913792103810666881.67606'
+    VereinsSeite.KaderGrid: '177261853427461088745049.24089'
+    VereinsSeite.KaderGrid.RowTemplate3: '1772618614153278145925672.34875'
     VereinsSeite.RowTemplate2: '1772105049649914370104072.4835'
+    VereinsSeite.SpieleGrid: '1772617972831514729642984.30554'
   modules: {}
   scripts: {}
   server_modules:

@@ -1,0 +1,27 @@
+components:
+- layout_properties: {grid_position: 'MIADJO,WTGUZE'}
+  name: label_1
+  properties:
+    align: left
+    bold: true
+    font_size: 18
+    spacing:
+      margin: [45, null, null, null]
+    text: Spiele
+  type: Label
+- components:
+  - name: repeating_panel_Spiele
+    properties: {item_template: VereinsSeite.RowTemplate2}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'STEKDC,LUBFJK'}
+  name: data_grid_Spieler
+  properties:
+    columns:
+    - {data_key: datum, id: JKSDUP, title: Datum}
+    - {data_key: heim, id: VJQQOR, title: Heim}
+    - {data_key: auswaerts, id: OJLQEN, title: Auswärts}
+    - {data_key: ergebnis, id: TFFPYD, title: Ergebniss}
+    - {data_key: column_1, id: ZUVCMV, title: Spieler Statistik}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true
