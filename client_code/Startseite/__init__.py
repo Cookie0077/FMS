@@ -24,7 +24,7 @@ class Startseite(StartseiteTemplate):
         ON Verein.Liga_id = Liga.Liga_id
         WHERE Liga.Name = '{self.drop_down_Ligen.selected_value}';
         """
-
+      
     Vereine = anvil.server.call('query_database_dict',sql)
 
     self.repeating_panel_Vereine.items = Vereine
