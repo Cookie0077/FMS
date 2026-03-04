@@ -19,9 +19,9 @@ components:
     columns:
     - {data_key: datum, id: JKSDUP, title: Datum}
     - {data_key: heim, id: VJQQOR, title: Heim}
-    - {data_key: auswaerts, id: OJLQEN, title: Auswärts}
-    - {data_key: ergebnis, id: TFFPYD, title: Ergebniss}
-    - {data_key: column_1, id: ZUVCMV, title: Spieler Statistik}
+    - {data_key: auswaerts, id: OJLQEN, title: Auswärts, width: ''}
+    - {data_key: ergebnis, expand: false, id: TFFPYD, title: Ergebniss, width: 108.428466796875}
+    - {data_key: column_1, expand: false, id: ZUVCMV, title: Spieler Statistiken, width: 136}
   type: DataGrid
 container: {type: ColumnPanel}
 is_package: true
