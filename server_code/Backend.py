@@ -47,7 +47,7 @@ def query_database_getSpieler(Verein_id: str):
 @anvil.server.callable
 def query_database_getMatch(Verein_id: str):
     sql = f""" SELECT Match.Datum AS datum, Match.Heimmannschaft as heim, Match.Auswärtsmannschaft
-    AS auswaerts, (Match.Tore_Heim || '-' || Match.Tore_Gast) AS ergebnis,Verein.Verein_id FROM Match
+    AS auswaerts, (Match.Tore_Heim || '-' || Match.Tore_Gast) AS ergebnis,Verein.Verein_id, Spieler_Statistik.STATS_id AS stat_id FROM Match
     JOIN Spieler_Statistik 
     ON Spieler_Statistik.Match_id = Match.Match_id
     JOIN Spieler

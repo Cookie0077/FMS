@@ -12,3 +12,4 @@ class SpieleGrid(SpieleGridTemplate):
     self.init_components(**properties)
     Spiele = anvil.server.call('query_database_getMatch',f'{Verein_id}')
     self.repeating_panel_Spiele.items = Spiele
+

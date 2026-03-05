@@ -1,5 +1,6 @@
 components:
-- layout_properties: {column: ZUVCMV}
+- event_bindings: {}
+  layout_properties: {column: ZUVCMV}
   name: button_1
   properties: {text: wählen}
   type: Button

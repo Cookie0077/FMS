@@ -21,8 +21,8 @@ dependencies:
 - dep_id: dep_8wvo1goy8ws5b
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
   version: {version_tag: v3.6.1}
-name: M3 App 1
-package_name: M3_App_1
+name: FMS
+package_name: FMS
 renamed: true
 runtime_options:
   client_version: '3'

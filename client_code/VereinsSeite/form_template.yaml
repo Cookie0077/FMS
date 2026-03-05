@@ -1,11 +1,11 @@
 components:
-- layout_properties: {grid_position: 'VCXLID,DMWKTL'}
+- layout_properties: {grid_position: 'VCXLID,DMWKTL KZUAHL,OLUQQA'}
   name: label_VereinsName
   properties: {align: center, bold: true, font_size: 32, italic: false}
   type: Label
-- layout_properties: {grid_position: 'VCXLID,HOQXUL'}
+- layout_properties: {grid_position: 'VCXLID,DMWKTL KZUAHL,OYDJBU'}
   name: image_Vereinslogo
-  properties: {height: 71.85711669921875, source: ''}
+  properties: {height: 55.142852783203125, source: ''}
   type: Image
 - event_bindings: {}
   layout_properties: {grid_position: 'VCXLID,YYIBNO'}
@@ -30,6 +30,6 @@ components:
   properties: {}
   type: ColumnPanel
 container:
-  properties: {col_widths: '{"DMWKTL":25,"HOQXUL":10,"YYIBNO":25}'}
+  properties: {col_widths: '{"DMWKTL":35,"YYIBNO":21,"OLUQQA":45,"OYDJBU":15}'}
   type: ColumnPanel
 is_package: true
