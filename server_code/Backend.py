@@ -5,6 +5,10 @@ import anvil.files
 from anvil.files import data_files
 import anvil.server
 import sqlite3
+import panda as pd
+import numpy as np
+import plotly.graph_objects as go
+
 
 @anvil.server.callable
 def query_database_getLiga():
@@ -62,3 +66,11 @@ def query_database_getMatch(Verein_id: str):
       cur = conn.cursor()
       result = cur.execute(sql).fetchall()
     return [dict(row) for row in result]
+
+
+@anvil.server.callable
+def get_Player_Rating():
+  #read in 10000 rows of data 
+  # TODO hole die gewünschten daten aus der DB
+  pass
+ 

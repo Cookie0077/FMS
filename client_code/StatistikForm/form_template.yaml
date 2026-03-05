@@ -1,3 +1,14 @@
-components: []
-container: {type: ColumnPanel}
+components:
+- data_bindings: []
+  layout_properties: {grid_position: 'MMPDDI,MCVHLM'}
+  name: label_1
+  properties: {align: left, bold: true, font_size: 18, italic: true, role: title, text: Spieler Ratings}
+  type: Label
+- layout_properties: {grid_position: 'INOMBT,LKHMNA'}
+  name: Player_ratings
+  properties: {}
+  type: Plot
+container:
+  properties: {role: null}
+  type: ColumnPanel
 is_package: true
