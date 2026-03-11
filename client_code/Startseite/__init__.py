@@ -20,7 +20,6 @@ class Startseite(StartseiteTemplate):
   def drop_down_Ligen_change(self, **event_args):
       
     Vereine = anvil.server.call('query_database_getVereine',f'{self.drop_down_Ligen.selected_value}')
-    print(Vereine)
     self.repeating_panel_Vereine.items = Vereine
     
 

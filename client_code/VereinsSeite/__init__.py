@@ -16,6 +16,7 @@ class VereinsSeite(VereinsSeiteTemplate):
     self.label_VereinsName.text = Vereins_dict["Vereinsname"]
     self.image_Vereinslogo.source = Vereins_dict["Logo"]
     self.tabs_Vereine_tab_click(0,"Spiele")
+    print(Verein_dict)
   
 
   @handle("button_Back", "click")
