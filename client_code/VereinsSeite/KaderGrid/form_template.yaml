@@ -15,6 +15,7 @@ components:
     - {data_key: nummer, id: VJQQOR, title: Nummer}
     - {data_key: position, id: OJLQEN, title: Position}
     - {data_key: marktwert, id: SQYCKF, title: Marktwert}
+    - {data_key: '', id: NGGKYE, title: Statistiken}
   type: DataGrid
 container: {type: ColumnPanel}
 is_package: true

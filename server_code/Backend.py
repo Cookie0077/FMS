@@ -82,7 +82,8 @@ def query_database_getMatch(Verein_id:str):
 @anvil.server.callable
 def get_Player_Rating(Match_id: str,Verein_id):
     sql = f""" SELECT  Spieler.Vorname || " " ||
-    Spieler.Nachname AS name, Spieler_Statistik.Rating AS rating FROM 
+    Spieler.Nachname AS name, Spieler_Statistik.Rating AS rating, Spieler_Statistik.Tore AS tore,
+    Spieler_Statistik.Gelbe_Karten AS gelbe_karte, Spieler_Statistik.rote_karten AS rote_karte FROM 
 	  Match
 	  Join Spieler_Statistik
 	  ON Match.Match_id = Spieler_Statistik.Match_id

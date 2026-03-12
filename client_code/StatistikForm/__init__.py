@@ -17,17 +17,24 @@ class StatistikForm(StatistikFormTemplate):
     namen =  [row['name'] for row in Stat_dict]
     ratings = [row['rating'] for row in Stat_dict]
 
-    balken = go.Bar(
-      x = ratings,         # x-Achse: Die Länge der Balken (Rating)
-      y = namen,           # y-Achse: Die Beschriftung (Spielername)
-      orientation = 'h',   # 'h' steht für horizontal
-      marker_color = '#1f77b4'  # Ein klassisches Blau
-    )
-
-    self.Player_ratings.data = [balken]
     self.Player_ratings.layout.title = "Player Ratings"
-    self.Player_ratings.layout =dict(l=150)
-    # Any code you write here will run before the form opens.
+    self.Player_ratings.layout.xaxis.title = "Rating"
+    self.Player_ratings.layout.yaxis.title = "Spieler"
+    self.Player_ratings.layout.paper_bgcolor = '#2c2c2c'
+    self.Player_ratings.layout.plot_bgcolor = '#2c2c2c'
+    self.Player_ratings.layout.font = dict(color="white") 
+    self.Player_ratings.layout.margin = dict(l=150, r=50, t=50, b=80)
+
+    balken = go.Bar(
+      x = ratings,        
+      y = namen,           
+      orientation = 'h',   
+      marker_color = '#1f77b4'  
+    )
+    self.Player_ratings.data = [balken]
+  
+    self.repeating_panel_player_stats.items = Stat_dict
+
 
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
