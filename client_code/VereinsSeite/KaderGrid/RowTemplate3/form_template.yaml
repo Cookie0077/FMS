@@ -1,5 +1,6 @@
 components:
-- layout_properties: {column: NGGKYE}
+- event_bindings: {}
+  layout_properties: {column: NGGKYE}
   name: button_1
   properties: {text: ➤}
   type: Button

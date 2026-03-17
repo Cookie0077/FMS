@@ -1,0 +1,29 @@
+components:
+- layout_properties: {grid_position: 'VPNYVC,QWZESO'}
+  name: label_Player_name
+  properties: {role: title}
+  type: Label
+- components:
+  - name: repeating_panel_Player_stats
+    properties: {item_template: StatistikSpielerForm.RowTemplate5}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'UIEXKR,QTEGVN'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: ges_matche, id: GNALFQ, title: Matches}
+    - {data_key: ges_tore, id: JKSDUP, title: Tore}
+    - {data_key: ges_gelbe, id: VJQQOR, title: Gelbe Karten}
+    - {data_key: ges_rote, id: OJLQEN, title: Rote Karten}
+    - {data_key: avg_rating, id: GSTMAH, title: AVG Rating}
+  type: DataGrid
+- layout_properties: {grid_position: 'EQOYTZ,HNRUBR'}
+  name: label_1
+  properties: {align: center, bold: true, border: '', font_size: 24, italic: true, text: Tore pro Spiel, underline: false}
+  type: Label
+- layout_properties: {grid_position: 'EWMYDK,EGRZUZ'}
+  name: plot_Goals_per_Game
+  properties: {}
+  type: Plot
+container: {type: ColumnPanel}
+is_package: true
