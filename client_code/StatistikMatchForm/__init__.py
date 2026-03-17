@@ -1,4 +1,4 @@
-from ._anvil_designer import StatistikFormTemplate
+from ._anvil_designer import StatistikMatchFormTemplate
 from anvil import *
 import plotly.graph_objects as go
 import anvil.server
@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 GMatch_dict = {}
-class StatistikForm(StatistikFormTemplate):
+class StatistikMatchForm(StatistikMatchFormTemplate):
   def __init__(self, Match_dict, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -22,8 +22,6 @@ class StatistikForm(StatistikFormTemplate):
     self.Player_ratings.layout.yaxis.title = "Spieler"
     self.Player_ratings.layout.paper_bgcolor = '#2c2c2c'
     self.Player_ratings.layout.plot_bgcolor = '#2c2c2c'
-    self.Player_ratings.layout.font = dict(color="white") 
-    self.Player_ratings.layout.margin = dict(l=150, r=50, t=50, b=80)
 
     balken = go.Bar(
       x = ratings,        

@@ -17,4 +17,4 @@ class RowTemplate2(RowTemplate2Template):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     print(self.item)
-    open_form('StatistikForm',self.item)
+    open_form('StatistikMatchForm',self.item)
