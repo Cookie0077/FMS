@@ -22,6 +22,8 @@ class StatistikMatchForm(StatistikMatchFormTemplate):
     self.Player_ratings.layout.yaxis.title = "Spieler"
     self.Player_ratings.layout.paper_bgcolor = '#2c2c2c'
     self.Player_ratings.layout.plot_bgcolor = '#2c2c2c'
+    self.Player_ratings.layout.xaxis.color = '#7438ef'
+    self.Player_ratings.layout.yaxis.color = '#7438ef'
 
     balken = go.Bar(
       x = ratings,        

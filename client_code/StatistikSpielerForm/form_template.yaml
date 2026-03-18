@@ -1,8 +1,13 @@
 components:
 - layout_properties: {grid_position: 'VPNYVC,QWZESO'}
   name: label_Player_name
-  properties: {role: title}
+  properties: {align: center, background: 'theme:Surface', bold: true, font_size: 32, foreground: 'theme:Primary', italic: true, role: title}
   type: Label
+- event_bindings: {}
+  layout_properties: {grid_position: 'VPNYVC,GTQSHI'}
+  name: button_1
+  properties: {align: right, text: Zurück zum Verein}
+  type: Button
 - components:
   - name: repeating_panel_Player_stats
     properties: {item_template: StatistikSpielerForm.RowTemplate5}

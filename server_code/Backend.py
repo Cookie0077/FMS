@@ -103,7 +103,7 @@ def get_Player_Rating(Match_id: str,Verein_id):
 
 @anvil.server.callable
 def GetPlayerGoalsPerGame(Spieler_id:str) :
-  sql = f"""SELECT Spieler_Statistik.Tore AS tore, Match.Datum FROM Spieler_Statistik
+  sql = f"""SELECT Spieler_Statistik.Tore AS tore,  Match.Auswärtsmannschaft AS Gegner FROM Spieler_Statistik
         JOIN Match 
         ON Spieler_Statistik.Match_id = Match.Match_id
           WHERE Spieler_Statistik.Spieler_id = '{Spieler_id}';"""

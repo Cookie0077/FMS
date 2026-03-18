@@ -19,13 +19,13 @@ class StatistikSpielerForm(StatistikSpielerFormTemplate):
     GPM = anvil.server.call("GetPlayerGoalsPerGame", Spieler_dict["Spieler_id"])
     print(GPM)
 
-    Dates = [row["Datum"] for row in GPM]
+    Dates = [row["Gegner"] for row in GPM]
     Goals = [row["tore"] for row in GPM]
 
     lines = go.Scatter(
       x = Dates,
       y = Goals,
-      mode='lines+markers', # Punkte für die Spiele, Linien für den Verlauf
+      mode='lines+markers',
       name='Tore',
     )  
     self.plot_Goals_per_Game.data = [lines]
@@ -36,6 +36,14 @@ class StatistikSpielerForm(StatistikSpielerFormTemplate):
     self.plot_Goals_per_Game.layout.xaxis.type = 'category'
     self.plot_Goals_per_Game.layout.plot_bgcolor = '#2c2c2c'
     self.plot_Goals_per_Game.layout.paper_bgcolor = '#2c2c2c'
+    self.plot_Goals_per_Game.layout.xaxis.color = '#7438ef'
+    self.plot_Goals_per_Game.layout.yaxis.color =  '#7438ef'
   
     self.plot_Goals_per_Game.layout.yaxis.dtick = 1 
     self.plot_Goals_per_Game.layout.yaxis.rangemode = 'tozero'
+
+  @handle("button_1", "click")
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+     Vereins_dict = anvil.server.call("query_database_getSingleVerein",GMatch_dict["Verein_id"])
+    open_form("VereinsSeite",)
