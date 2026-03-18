@@ -46,8 +46,11 @@ def query_database_getVereine(liga: str):
 
 @anvil.server.callable
 def query_database_getSpieler(Verein_id: str):
-  sql = f""" SELECT Spieler.Spieler_Nummer AS nummer, Spieler.Vorname || " " ||
-    Spieler.Nachname AS name, Spieler.Marktwert AS marktwert, Spieler.Position 
+  sql = f""" SELECT 
+    Spieler.Spieler_Nummer AS nummer, 
+    Spieler.Vorname || ' ' || Spieler.Nachname AS name,
+    PRINTF('%.2f Mio €', Spieler.Marktwert) AS marktwert, 
+    Spieler.Position
     AS position, Spieler.Spieler_id AS Spieler_id FROM Spieler
     JOIN Verein_Spieler
     ON Verein_Spieler.Spieler_id = Spieler.Spieler_id
@@ -103,10 +106,19 @@ def get_Player_Rating(Match_id: str,Verein_id):
 
 @anvil.server.callable
 def GetPlayerGoalsPerGame(Spieler_id:str) :
-  sql = f"""SELECT Spieler_Statistik.Tore AS tore,  Match.Auswärtsmannschaft AS Gegner FROM Spieler_Statistik
-        JOIN Match 
-        ON Spieler_Statistik.Match_id = Match.Match_id
-          WHERE Spieler_Statistik.Spieler_id = '{Spieler_id}';"""
+  sql = f"""
+SELECT 
+    Spieler_Statistik.Tore AS tore,
+    CASE 
+        WHEN Verein.Name = Match.Heimmannschaft THEN Match.Auswärtsmannschaft 
+        ELSE Match.Heimmannschaft 
+    END AS Gegner
+FROM Spieler_Statistik
+JOIN Match ON Spieler_Statistik.Match_id = Match.Match_id
+JOIN Verein_Spieler ON Spieler_Statistik.Spieler_id = Verein_Spieler.Spieler_id
+JOIN Verein ON Verein_Spieler.Verein_id = Verein.Verein_id
+WHERE Spieler_Statistik.Spieler_id = '{Spieler_id}';
+"""
   with sqlite3.connect(data_files["fussball_manager.db"]) as conn:
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
@@ -117,7 +129,7 @@ def GetPlayerGoalsPerGame(Spieler_id:str) :
 @anvil.server.callable
 def get_Player_stats(Spieler_id) :
   sql = f""" SELECT sum(Tore) AS ges_tore, count(STATS_id) AS ges_matche, sum(Gelbe_Karten)
-      As ges_gelbe, sum(Rote_Karten) AS ges_rote, avg(Rating) AS avg_rating FROM Spieler_Statistik
+      As ges_gelbe, sum(Rote_Karten) AS ges_rote,PRINTF('%.2f', AVG(Rating)) AS avg_rating FROM Spieler_Statistik
       WHERE Spieler_id = '{Spieler_id}';"""
 
   

@@ -26,9 +26,11 @@ components:
   name: label_1
   properties: {align: center, bold: true, border: '', font_size: 24, italic: true, text: Tore pro Spiel, underline: false}
   type: Label
-- layout_properties: {grid_position: 'EWMYDK,EGRZUZ'}
+- layout_properties: {grid_position: 'EWMYDK,LHBXCP'}
   name: plot_Goals_per_Game
-  properties: {}
+  properties:
+    height: 444.71417236328125
+    margin: [null, null, null, 0]
   type: Plot
 container: {type: ColumnPanel}
 is_package: true

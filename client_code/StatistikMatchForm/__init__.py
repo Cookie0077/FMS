@@ -1,6 +1,6 @@
 from ._anvil_designer import StatistikMatchFormTemplate
 from anvil import *
-import plotly.graph_objects as go
+import plotly.graph_objects as go 
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -24,6 +24,12 @@ class StatistikMatchForm(StatistikMatchFormTemplate):
     self.Player_ratings.layout.plot_bgcolor = '#2c2c2c'
     self.Player_ratings.layout.xaxis.color = '#7438ef'
     self.Player_ratings.layout.yaxis.color = '#7438ef'
+    self.Player_ratings.layout.margin = dict(
+      l=150,  # Links
+      r=50,  # Rechts
+      t=50,  # Oben
+      b=200  
+    )
 
     balken = go.Bar(
       x = ratings,        

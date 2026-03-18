@@ -17,6 +17,10 @@ components:
     - {data_key: gelbe_karte, expand: false, id: OJLQEN, title: Gelbe karte, width: 167.142822265625}
     - {data_key: rote_karte, expand: false, id: IJSSNM, title: Rote Karte, width: 185.28558349609375}
   type: DataGrid
+- layout_properties: {grid_position: 'ZBPIUQ,RWXBBZ'}
+  name: linear_panel_1
+  properties: {}
+  type: LinearPanel
 - data_bindings: []
   layout_properties: {grid_position: 'QWZCIK,IRMVGK'}
   name: label_1

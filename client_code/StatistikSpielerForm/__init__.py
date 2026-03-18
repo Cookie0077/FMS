@@ -41,6 +41,12 @@ class StatistikSpielerForm(StatistikSpielerFormTemplate):
   
     self.plot_Goals_per_Game.layout.yaxis.dtick = 1 
     self.plot_Goals_per_Game.layout.yaxis.rangemode = 'tozero'
+    self.plot_Goals_per_Game.layout.margin = dict(
+      l=50,  # Links
+      r=50,  # Rechts
+      t=50,  # Oben
+      b=200  
+    )
 
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
