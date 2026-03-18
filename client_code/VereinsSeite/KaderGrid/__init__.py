@@ -13,4 +13,6 @@ class KaderGrid(KaderGridTemplate):
 
     Spieler = anvil.server.call('query_database_getSpieler', f'{Verein_id}')
     self.repeating_panel_Spieler.items = Spieler
+    for spieler in Spieler:
+      spieler["Verein_id"] = Verein_id
   

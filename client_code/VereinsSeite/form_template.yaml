@@ -1,16 +1,16 @@
 components:
-- layout_properties: {grid_position: 'VCXLID,DMWKTL YBVMMD,GMIAIB'}
+- layout_properties: {grid_position: 'VCXLID,TQBCOJ'}
   name: label_VereinsName
   properties: {align: center, bold: true, font_size: 32, italic: false}
   type: Label
-- layout_properties: {grid_position: 'VCXLID,DMWKTL YBVMMD,WUYJGU'}
+- layout_properties: {grid_position: 'VCXLID,DMWKTL'}
   name: image_Vereinslogo
   properties: {height: 71.42854309082031, source: 'https://logos-world.net/wp-content/uploads/2020/06/Manchester-City-Logo-2016-present.jpg'}
   type: Image
 - event_bindings: {}
   layout_properties: {grid_position: 'VCXLID,YYIBNO'}
   name: button_Back
-  properties: {align: right, text: Back}
+  properties: {align: right, text: Zurück}
   type: Button
 - event_bindings: {}
   layout_properties: {grid_position: 'MZNIDQ,MRPJVH', row_background: ''}
@@ -30,6 +30,6 @@ components:
   properties: {}
   type: ColumnPanel
 container:
-  properties: {col_widths: '{"DMWKTL":35,"YYIBNO":25,"OLUQQA":40}'}
+  properties: {col_widths: '{"DMWKTL":25,"YYIBNO":25,"TQBCOJ":30}'}
   type: ColumnPanel
 is_package: true

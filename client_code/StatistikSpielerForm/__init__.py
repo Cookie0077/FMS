@@ -6,14 +6,14 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-
+ThisSpieler_dict = {}
 class StatistikSpielerForm(StatistikSpielerFormTemplate):
   def __init__(self, Spieler_dict, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.label_Player_name.text = f"Statistiken: {Spieler_dict['name']}"
     Player_stats = anvil.server.call("get_Player_stats",Spieler_dict["Spieler_id"])
-
+    ThisSpieler_dict.update(Spieler_dict)
     self.repeating_panel_Player_stats.items = Player_stats
     # Any code you write here will run before the form opens.
     GPM = anvil.server.call("GetPlayerGoalsPerGame", Spieler_dict["Spieler_id"])
@@ -45,5 +45,5 @@ class StatistikSpielerForm(StatistikSpielerFormTemplate):
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-     Vereins_dict = anvil.server.call("query_database_getSingleVerein",GMatch_dict["Verein_id"])
-    open_form("VereinsSeite",)
+    Vereins_dict = anvil.server.call("query_database_getSingleVerein",ThisSpieler_dict["Verein_id"])
+    open_form("VereinsSeite",Vereins_dict)
