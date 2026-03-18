@@ -96,7 +96,7 @@ def get_Player_Rating(Match_id: str,Verein_id):
 	  ON Verein_Spieler.Spieler_id = Spieler.Spieler_id
   	JOIN Verein 
 	  ON Verein_Spieler.Verein_id = Verein.Verein_id
-	  WHERE Match.Match_id = '{Match_id}' and  Verein.Verein_id = '{Verein_id}' """
+	  WHERE Match.Match_id = '{Match_id}' and  Verein.Verein_id = '{Verein_id}' ORDER BY Spieler_Statistik.Rating DESC"""
   
     with sqlite3.connect(data_files["fussball_manager.db"]) as conn:
       conn.row_factory = sqlite3.Row
