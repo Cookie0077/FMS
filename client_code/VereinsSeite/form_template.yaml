@@ -30,6 +30,6 @@ components:
   properties: {}
   type: ColumnPanel
 container:
-  properties: {col_widths: '{"DMWKTL":25,"YYIBNO":25,"TQBCOJ":30}'}
+  properties: {col_widths: '{"DMWKTL":30,"YYIBNO":20,"TQBCOJ":30}', foreground: 'theme:Primary'}
   type: ColumnPanel
 is_package: true

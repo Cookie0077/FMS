@@ -5,6 +5,7 @@ components:
     align: left
     bold: true
     font_size: 18
+    foreground: theme:Primary
     spacing:
       margin: [45, null, null, null]
     text: Spiele

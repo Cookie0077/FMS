@@ -32,5 +32,7 @@ components:
     height: 444.71417236328125
     margin: [null, null, null, 0]
   type: Plot
-container: {type: ColumnPanel}
+container:
+  properties: {col_widths: '{"QWZESO":35,"GTQSHI":25}'}
+  type: ColumnPanel
 is_package: true

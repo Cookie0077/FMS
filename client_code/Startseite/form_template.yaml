@@ -7,7 +7,7 @@ components:
   - event_bindings: {}
     layout_properties: {grid_position: 'IHFHRX,UADUSF'}
     name: drop_down_Ligen
-    properties: {}
+    properties: {background: 'theme:Surface Variant', foreground: 'theme:Primary'}
     type: DropDown
   - layout_properties: {grid_position: 'KDFMPU,RKCUNN'}
     name: label_4

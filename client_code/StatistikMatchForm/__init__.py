@@ -12,10 +12,10 @@ class StatistikMatchForm(StatistikMatchFormTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     Stat_dict = anvil.server.call("get_Player_Rating",Match_dict["Match_id"],Match_dict["Verein_id"])
-    print(Stat_dict)
     GMatch_dict.update(Match_dict)
     namen =  [row['name'] for row in Stat_dict]
     ratings = [row['rating'] for row in Stat_dict]
+    self.label_Match.text = f"{Match_dict['heim']} {Match_dict['ergebnis']} {Match_dict['auswaerts']}  "
 
     self.Player_ratings.layout.title = "Player Ratings"
     self.Player_ratings.layout.xaxis.title = "Rating"
